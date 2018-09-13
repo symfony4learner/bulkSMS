@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Admin!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello Admin! ✅</h1>
+
+    Let's try something more challenging:
+    <ul>
+        <li>Groups <code><a href="{{path('grp_index')}} ">Groups</a></code></li>
+        <li>Contacts <code><a href="{{ path('choose_group') }}">Contacts</a></code></li>
+        <li>Mock SMS <code><a href="http://localhost:8002/sms/receive?message={{mocksms}}&phone_no=0736600033">Mock sms</a></code></li>
+    </ul>
+</div>
+{% endblock %}

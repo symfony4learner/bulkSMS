@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Grp{% endblock %}
+
+{% block body %}
+    <h1>Create new Grp</h1>
+
+    {{ include('grp/_form.html.twig') }}
+
+    <a href="{{ path('grp_index') }}">back to list</a>
+{% endblock %}

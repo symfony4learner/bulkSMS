@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contacts List{% endblock %}
+
+{% block body %}
+    <h1>Contacts List</h1>
+
+    <table class="table" border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Group</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.number }}</td>
+                <td>{{ contact.grp }}</td>
+                <td>
+                    <a href="{{ path('contact_show', {'id': contact.id}) }}">show</a>
+                    <a href="{{ path('contact_edit', {'id': contact.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<hr />
+
+    <a href="{{ path('contact_new', {'grp': grp.id}) }}">Create new</a> <br />
+    <a href="{{ path('contacts_upload', {'grp': grp.id }) }}">Upload from excel file [xls / xlsx]</a>
+<hr />
+    <a href="{{ path('contact_clear', {'grp': grp.id }) }}">Clear all contacts [destructive]</a>
+
+{% endblock %}

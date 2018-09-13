@@ -1,0 +1,7 @@
+<h2>Choose a group to see its contacts</h2>
+
+<ul>
+{% for group in groups %}
+	<li><a href="{{path('contact_index', {'grp': group.title})}}">{{group.title}}</a></li>
+{% endfor %}
+</ul>

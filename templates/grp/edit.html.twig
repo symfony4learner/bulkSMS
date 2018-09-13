@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Grp{% endblock %}
+
+{% block body %}
+    <h1>Edit Grp</h1>
+
+    {{ include('grp/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('grp_index') }}">back to list</a>
+
+    {{ include('grp/_delete_form.html.twig') }}
+{% endblock %}
